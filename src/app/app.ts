@@ -7,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'first_app';
+  color = 'green'
+  parentName: string = 'hello, world!';
+
+  changeColor(newColor: string) {
+    this.color = newColor;
+  }
+
+  checkCurrentValue(event: Event) {
+    const target = event.target as HTMLInputElement;
+    console.log('e', target.value);
+  }
+
+  setNewName(newName: string) {
+    this.parentName = newName;
+  }
 }
