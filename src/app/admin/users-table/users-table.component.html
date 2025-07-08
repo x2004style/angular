@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>IMS Administrations</h2>
+    <div class="actions">
+        <div class="left-actions">
+            <button class="btn btn-primary">
+                <span class="icon-placeholder"></span>
+                Add user
+            </button>
+            <div class="divider"></div>
+            <button class="btn btn-text" [disabled]="!hasSelectedUsers" (click)="assignRolesTest()">Assign
+                roles</button>
+            <button class="btn btn-text" [disabled]="!hasSelectedUsers" (click)="toggleEmailAvailability()">Email
+                availability</button>
+        </div>
+        <div class="right-actions">
+            <button class="btn-text" (click)="filterTest()">
+                <span class="filter-icon"></span>
+            </button>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th> <label class="custom-checkbox header-checkbox">
+                        <input type="checkbox" disabled>
+                        <span class="checkbox-icon"></span>
+                    </label> Login</th>
+                <th>Full name</th>
+                <th>Organization</th>
+                <th>E-mail</th>
+                <th>Roles</th>
+                <th>Email availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users" [class.selected]="user.selected">
+                <td> <label class="custom-checkbox">
+                        <input type="checkbox" [checked]="user.selected" (change)="toggleSelection(user)">
+                        <span class="checkbox-icon"></span>
+                    </label> {{ user.login }}
+                </td>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.organization }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles.join(', ') }}</td>
+                <td>
+                    <div class="email-availability">
+                        <span class="status-indicator" [class.available]="user.emailAvailable"></span>
+                        {{ user.emailAvailable ? 'Yes' : 'No' }}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

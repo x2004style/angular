@@ -1,0 +1,205 @@
+.container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th,
+td {
+    height: 32px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+th {
+    color: rgba(10, 17, 31, 0.67);
+    text-align: left;
+    padding: 16px;
+    letter-spacing: 0.3%;
+    border-bottom: 1px solid rgba(10, 17, 31, 0.1);
+    font-weight: 500;
+}
+
+th:first-child,
+td:first-child {
+    width: calc(100% / (1 + 1.6 * (var(--columns) - 1)));
+}
+
+td:first-child {
+    width: calc(100% / (1 + 1.6 * (var(--columns) - 1)));
+    color: rgba(0, 99, 153, 1)
+}
+
+th:not(:first-child),
+td:not(:first-child) {
+    width: calc(1.6 * 100% / (1 + 1.6 * (var(--columns) - 1)));
+}
+
+td {
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(10, 17, 31, 0.05);
+}
+
+tr.selected {
+    background-color: rgba(218, 239, 251, 1);
+    position: relative;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.email-availability {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 4px;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-indicator.available {
+    background-color: rgba(81, 202, 88, 1);
+}
+
+.status-indicator:not(.available) {
+    background-color: rgba(239, 78, 78, 1);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 17px;
+    background-color: rgba(240, 250, 255, 1);
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 8px 12px;
+    margin: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 99, 153, 1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+}
+
+.btn-primary {
+    border: 1px solid rgba(0, 99, 153, 1);
+    cursor: pointer;
+    background: none;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.btn-text:not(:disabled) {
+    cursor: pointer;
+}
+
+.icon-placeholder {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../../../icons/addusericon.svg);
+}
+
+.left-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.divider {
+    height: 24px;
+    width: 1px;
+    background-color: rgba(10, 17, 31, 0.22);
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-bar {
+    position: relative;
+    margin: 8px 16px;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    padding-left: 35px;
+    border: 1px solid rgba(10, 17, 31, 0.22);
+    border-radius: 4px;
+    background-color: white;
+    min-width: 200px;
+    font-family: "Ubuntu";
+    font-size: 14px;
+}
+
+.search-bar::before {
+    content: url(../../../icons/searchicon.svg);
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.filter-icon {
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background-image: url(../../../icons/filtericon.svg);
+}
+
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+}
+
+.checkbox-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.header-checkbox .checkbox-icon {
+    background-image: url('../../../icons/headercheckboxicon.svg');
+}
+
+.custom-checkbox input:checked~.checkbox-icon {
+    background-image: url('../../../icons/checkboxicon.svg');
+}
