@@ -99,4 +99,36 @@ export class UsersTableComponent {
   filterTest() {
     console.log('filter')
   }
+  allRoles: string[] = ['Admin', 'Operator', 'User', 'Manager', 'Analyst', 'Guest'];
+  selectedRoles: string[] = [];
+
+  showRoleAssignment = false;
+
+  toggleRoleAssignment() {
+    if (this.hasSelectedUsers) {
+      this.showRoleAssignment = !this.showRoleAssignment;
+      this.selectedRoles = this.getSelectedUsersRoles();
+    }
+  }
+
+  getSelectedUsersRoles(): string[] {
+    const roles = new Set<string>();
+    this.users
+      .filter(user => user.selected)
+      .forEach(user => user.roles.forEach(role => roles.add(role)));
+    return Array.from(roles);
+  }
+
+  isRoleSelected(role: string): boolean {
+    return this.selectedRoles.includes(role);
+  }
+
+  applyRoles() {
+    this.users
+      .filter(user => user.selected)
+      .forEach(user => {
+        user.roles = [...this.selectedRoles];
+      });
+    this.showRoleAssignment = false;
+  }
 }

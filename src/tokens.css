@@ -1,0 +1,31 @@
+:root {
+    --color-text-primary: rgba(10, 17, 31, 1);
+    --color-text-secondary: rgba(10, 17, 31, 0.67);
+    --color-border-light: rgba(10, 17, 31, 0.1);
+    --color-border-lighter: rgba(10, 17, 31, 0.05);
+    --color-background-selected: rgba(218, 239, 251, 1);
+    --color-status-available: rgba(81, 202, 88, 1);
+    --color-status-unavailable: rgba(239, 78, 78, 1);
+    --color-action-bg: rgba(240, 250, 255, 1);
+    --color-btn-primary: rgba(0, 99, 153, 1);
+
+    --font-family-base: 'Ubuntu', sans-serif;
+    --font-weight-medium: 500;
+    --font-size-btn: 14px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 24px;
+
+    --height-row: 32px;
+    --width-icon-sm: 16px;
+    --width-icon-md: 20px;
+    --sidenav-width: 600px;
+    --border-radius-sm: 4px;
+    --border-radius-full: 50%;
+
+    --transition-fast: 0.3s ease-out;
+}
