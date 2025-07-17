@@ -5,6 +5,7 @@
     width: 100%;
     box-sizing: border-box;
     font-family: var(--font-family-base);
+    position: relative;
 }
 
 h1,
@@ -325,6 +326,7 @@ input[type="checkbox"] {
     border-radius: var(--border-radius-sm);
     color: white;
     padding: var(--spacing-xs) var(--spacing-md);
+    cursor: pointer;
 }
 
 .sidenav-top-actions button:last-child {
@@ -333,4 +335,23 @@ input[type="checkbox"] {
 
 .delete-role-btn {
     padding-bottom: 45px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: var(--sidenav-width);
+    display: flex;
+    justify-content: flex-start;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-top: 1px solid var(--color-border-lighter);
+    background-color: rgba(10, 17, 31, 0.03);
+    z-index: 2000;
+    width: 100%;
+}
+
+.newview>table {
+    width: calc(100% - var(--sidenav-width));
+    table-layout: fixed;
 }
